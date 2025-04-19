@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 const moveSpeed = 50
 const maxSpeed = 100
-const jumpHeight = -300
+const jumpHeight = -350
 const gravity = 15
 const speedGravityLost = 50
+const timeEyes = 4;
 
 @onready var sprite = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
-
-
+var timerEyes : float = 0;
+var playing_idle2 := false
 
 func _physics_process(_delta):
 	velocity.y += gravity
@@ -26,7 +27,14 @@ func _physics_process(_delta):
 		velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
 
 	else:
-		animationPlayer.play("Idle")
+		timerEyes += _delta
+		if timerEyes > timeEyes:
+			animationPlayer.play("Idle_2")
+			playing_idle2 = true
+			if timerEyes > timeEyes + 0.6:
+				timerEyes = 0
+		else:
+			animationPlayer.play("Idle")
 		friction = true
 
 	if is_on_floor():
