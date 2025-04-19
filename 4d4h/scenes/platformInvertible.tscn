@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b13dyu7j55hp6"]
+
+[ext_resource type="Script" uid="uid://mw7jdynagr2s" path="res://Scripts/platform_invertible.gd" id="1_ttl47"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vfhqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttl47"]
+size = Vector2(32, 17)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_ttl47")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_vfhqy")
+hframes = 16
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ttl47")
