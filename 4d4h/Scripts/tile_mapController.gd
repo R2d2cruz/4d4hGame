@@ -31,4 +31,4 @@ func get_key_by_value(dict: Dictionary, value: Vector3i) -> Vector3i:
 	for k in dict.keys():
 		if dict[k] == value:
 			return k
-	return Vector3i(0, 0, 0)
+	return value
