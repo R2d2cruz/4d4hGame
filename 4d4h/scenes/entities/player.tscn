@@ -84,12 +84,14 @@ _data = {
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
+[node name="DetectarCaja" type="RayCast2D" parent="."]
+target_position = Vector2(10, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(18, -14)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(17, -16)
+position = Vector2(-1, -2)
 texture = SubResource("CompressedTexture2D_3vyb7")
 hframes = 8
 
