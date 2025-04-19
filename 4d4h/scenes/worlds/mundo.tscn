@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://ccavxypeubenl"]
+[gd_scene load_steps=10 format=4 uid="uid://ccavxypeubenl"]
 
-[ext_resource type="Texture2D" uid="uid://da4chfw72dwj4" path="res://Assets/Rocky Roads/Tilesets/tileset_desert.png" id="1_a2ps7"]
-[ext_resource type="Texture2D" uid="uid://bj32eoe4kgt4v" path="res://Assets/Rocky Roads/Tilesets/tileset_snow.png" id="2_0vka0"]
-[ext_resource type="PackedScene" uid="uid://dqhcp5hs40cqs" path="res://scenes/entities/player.tscn" id="2_a2ps7"]
-[ext_resource type="Script" uid="uid://8p0thfntyo2a" path="res://Scripts/tile_mapController.gd" id="3_vwj67"]
-[ext_resource type="Script" uid="uid://chlg1k050quls" path="res://Scripts/world_controller.gd" id="4_yi5ae"]
+[ext_resource type="Texture2D" uid="uid://da4chfw72dwj4" path="res://Assets/Rocky Roads/Tilesets/tileset_desert.png" id="1_drc3c"]
+[ext_resource type="Texture2D" uid="uid://bj32eoe4kgt4v" path="res://Assets/Rocky Roads/Tilesets/tileset_snow.png" id="2_b82al"]
+[ext_resource type="Script" uid="uid://8p0thfntyo2a" path="res://Scripts/tile_mapController.gd" id="3_wwc5f"]
+[ext_resource type="PackedScene" uid="uid://dqhcp5hs40cqs" path="res://scenes/entities/player.tscn" id="4_voc7j"]
+[ext_resource type="Script" uid="uid://chlg1k050quls" path="res://Scripts/world_controller.gd" id="5_prk2b"]
+[ext_resource type="PackedScene" uid="uid://b13dyu7j55hp6" path="res://scenes/objects/platformInvertible.tscn" id="6_djcqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vka0"]
-texture = ExtResource("1_a2ps7")
+texture = ExtResource("1_drc3c")
 3:0/0 = 0
 4:0/0 = 0
 2:1/0 = 0
@@ -57,7 +58,7 @@ texture = ExtResource("1_a2ps7")
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi5ae"]
-texture = ExtResource("2_0vka0")
+texture = ExtResource("2_b82al")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -124,13 +125,13 @@ sources/2 = SubResource("TileSetAtlasSource_yi5ae")
 
 [node name="Mundo" type="Node2D"]
 
-[node name="TileMap" type="TileMapLayer" parent="." groups=["Invertible"]]
+[node name="TileMap" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAP//AQACAAEAAAABAP//AQADAAEAAAACAP//AQADAAEAAAADAP//AQADAAEAAAAEAP//AQADAAEAAAAFAP//AQADAAEAAAAGAP//AQAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AQACAAEAAAABAP//AQADAAEAAAACAP//AQADAAEAAAADAP//AQADAAEAAAAEAP//AQADAAEAAAAFAP//AQADAAEAAAAGAP//AQAFAAEAAAAAAPr/AQADAAEAAAABAPr/AQADAAEAAAACAPr/AQADAAEAAAADAPr/AQADAAEAAAAEAPr/AQADAAEAAAAFAPr/AQADAAEAAAAGAPr/AQADAAEAAAA=")
 tile_set = SubResource("TileSet_0vka0")
-script = ExtResource("3_vwj67")
+script = ExtResource("3_wwc5f")
 
-[node name="CharacterBody2D" parent="." groups=["GravityOff", "Invertible"] instance=ExtResource("2_a2ps7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_voc7j")]
 position = Vector2(0, -33)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -138,4 +139,11 @@ offset = Vector2(0, -48)
 zoom = Vector2(3, 3)
 
 [node name="WorldController" type="Node" parent="."]
-script = ExtResource("4_yi5ae")
+script = ExtResource("5_prk2b")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_djcqd")]
+position = Vector2(112, -80)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("6_djcqd")]
+position = Vector2(144, -80)
+frame = 1
