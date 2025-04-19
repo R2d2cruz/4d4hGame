@@ -2,7 +2,8 @@ extends Node
 
 var inverted := false
 var gravity := true
-var gravityTimer :float = 0.0
+var gravityTimer : float = 0.0
+@export var gravityTimeLimit : float = 5.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func _process(delta: float) -> void:
 			get_tree().call_group("reacts_gravity", "on_ungravited", gravity)
 	else:
 		gravityTimer += delta
-		if gravityTimer > 6:
+		if gravityTimer > gravityTimeLimit or Input.is_action_just_pressed("gravity_world"):
 			gravity = true
 			gravityTimer = 0
 			get_tree().call_group("reacts_gravity", "on_ungravited", gravity)
