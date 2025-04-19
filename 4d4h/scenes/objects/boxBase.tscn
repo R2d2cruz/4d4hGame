@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccu6d1qom56uf"]
+
+[ext_resource type="Script" uid="uid://ntj8vac4bxbt" path="res://Scripts/boxBase.gd" id="1_0cer5"]
+[ext_resource type="Texture2D" uid="uid://erq2vgf6xnq4" path="res://Assets/Rocky Roads/Objects/treasure_chest.png" id="2_0cer5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmolx"]
+size = Vector2(22, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_0cer5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0cer5")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 8)
+shape = SubResource("RectangleShape2D_cmolx")
