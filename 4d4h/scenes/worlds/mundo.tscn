@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://ccavxypeubenl"]
+[gd_scene load_steps=9 format=4 uid="uid://ccavxypeubenl"]
 
 [ext_resource type="Texture2D" uid="uid://da4chfw72dwj4" path="res://Assets/Rocky Roads/Tilesets/tileset_desert.png" id="1_a2ps7"]
 [ext_resource type="Texture2D" uid="uid://bj32eoe4kgt4v" path="res://Assets/Rocky Roads/Tilesets/tileset_snow.png" id="2_0vka0"]
-[ext_resource type="PackedScene" uid="uid://dqhcp5hs40cqs" path="res://scenes/player.tscn" id="2_a2ps7"]
+[ext_resource type="PackedScene" uid="uid://dqhcp5hs40cqs" path="res://scenes/entities/player.tscn" id="2_a2ps7"]
 [ext_resource type="Script" uid="uid://8p0thfntyo2a" path="res://Scripts/tile_mapController.gd" id="3_vwj67"]
 [ext_resource type="Script" uid="uid://chlg1k050quls" path="res://Scripts/world_controller.gd" id="4_yi5ae"]
-[ext_resource type="PackedScene" uid="uid://b13dyu7j55hp6" path="res://scenes/platformInvertible.tscn" id="6_jaeu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0vka0"]
 texture = ExtResource("1_a2ps7")
@@ -136,10 +135,7 @@ position = Vector2(0, -33)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 offset = Vector2(0, -48)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
 [node name="WorldController" type="Node" parent="."]
 script = ExtResource("4_yi5ae")
-
-[node name="StaticBody2D" parent="." instance=ExtResource("6_jaeu2")]
-position = Vector2(112, -80)

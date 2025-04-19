@@ -9,6 +9,7 @@ extends StaticBody2D
 func _ready() -> void:
 	add_to_group("reacts_to_inversion")
 	sprite2D.frame = frame
+	sprite2D.visible = !appears_when_inverted
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_invert(state: bool):
