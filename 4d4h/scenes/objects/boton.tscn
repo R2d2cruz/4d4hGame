@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca42stepa6dw4"]
+
+[ext_resource type="Texture2D" uid="uid://cw35jvcmdqpn3" path="res://Assets/botons.png" id="1_1dssm"]
+[ext_resource type="Script" uid="uid://cxdeogomnvp4m" path="res://Scripts/boton.gd" id="1_wd1rm"]
+
+[node name="RigidBody2D" type="StaticBody2D"]
+script = ExtResource("1_wd1rm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.6, -10)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_1dssm")
+hframes = 8
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2.4, -1)
+polygon = PackedVector2Array(14, 3, -8, 3, -3, -1, 9, -1)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -6)
