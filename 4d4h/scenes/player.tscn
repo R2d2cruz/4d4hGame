@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://4ycclfyf2j3p" path="res://Scripts/player.gd" id="1_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(17, 28)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 8.0
+height = 28.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vyb7"]
 load_path = "res://.godot/imported/player-sprite.png-fe169b65797d316c9f89490521e2e385.ctex"
@@ -84,8 +85,8 @@ _data = {
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17.5, -14)
-shape = SubResource("RectangleShape2D_u8vuu")
+position = Vector2(18, -14)
+shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(17, -16)
