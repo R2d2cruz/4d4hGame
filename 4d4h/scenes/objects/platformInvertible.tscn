@@ -24,7 +24,7 @@ script = ExtResource("1_ttl47")
 modulate = Color(3, 3, 3, 1)
 material = SubResource("ShaderMaterial_37a4u")
 texture = ExtResource("1_vfhqy")
-hframes = 16
+hframes = 18
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jfxj3")
