@@ -11,11 +11,11 @@ var frame := 0
 var active := true
 var inversed := false
 var frames := {
-	false: {
+	true: {
 		true: 3,
 		false: 0,
 	},
-	true: {
+	false: {
 		true: 7,
 		false: 4,
 	}
