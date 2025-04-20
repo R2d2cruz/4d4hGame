@@ -26,6 +26,7 @@ func _ready() -> void:
 	add_to_group("reacts_to_inversion")
 	sprite2D.frame = frame
 	sprite2D.visible = when_appers == 0 or when_appers == 1
+	collisionShape2D.disabled = when_appers == 2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func on_invert(state: bool):
