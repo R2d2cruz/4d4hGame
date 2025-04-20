@@ -40,7 +40,7 @@ _data = {
 &"click": SubResource("Animation_76smn")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="CanvasGroup"]
 script = ExtResource("1_tfk8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
