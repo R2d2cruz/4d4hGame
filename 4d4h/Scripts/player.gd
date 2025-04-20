@@ -10,16 +10,22 @@ const timeEyes := 4;
 @onready var sprite := $Sprite2D
 @onready var animationPlayer := $AnimationPlayer
 @onready var detectarCaja : RayCast2D = $DetectarCaja
+@onready var light : PointLight2D = $PointLight2D
 
 var timerEyes : float = 0;
 var playing_idle2 := false
 var gravity_enabled := true
 var last_pushable : Node = null
+var levelUnfinished := true
 
 
 func _ready():
-	pass
 	#add_to_group("reacts_gravity")
+	add_to_group("reacts_to_inversion")
+	light.enabled = false
+
+func on_invert(state: bool):
+	light.enabled = state
 
 func on_ungravited(state: bool):
 	print("player gravity")
@@ -85,4 +91,7 @@ func _physics_process(_delta):
 		if friction:
 			velocity.x = lerp(velocity.x, 0.0, 0.5)
 
-	move_and_slide()
+	if levelUnfinished:
+		move_and_slide()
+	else:
+		animationPlayer.play("Idle")

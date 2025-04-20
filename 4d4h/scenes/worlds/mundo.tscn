@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=4 uid="uid://ccavxypeubenl"]
+[gd_scene load_steps=20 format=4 uid="uid://ccavxypeubenl"]
 
 [ext_resource type="Texture2D" uid="uid://da4chfw72dwj4" path="res://Assets/Rocky Roads/Tilesets/tileset_desert.png" id="1_drc3c"]
 [ext_resource type="Texture2D" uid="uid://h8tv2dvmhgrg" path="res://Assets/tileset_base_cave.png" id="1_prk2b"]
+[ext_resource type="Script" uid="uid://br2ia0ah7h4go" path="res://Scripts/mundo.gd" id="1_uqt1o"]
 [ext_resource type="Texture2D" uid="uid://bj32eoe4kgt4v" path="res://Assets/Rocky Roads/Tilesets/tileset_snow.png" id="2_b82al"]
 [ext_resource type="Script" uid="uid://8p0thfntyo2a" path="res://Scripts/tile_mapController.gd" id="3_wwc5f"]
 [ext_resource type="Texture2D" uid="uid://bxb7y50l7h27a" path="res://Assets/tileset_inverted_cave.png" id="4_djcqd"]
@@ -44,7 +45,6 @@ texture = ExtResource("1_prk2b")
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
@@ -232,7 +232,6 @@ texture = ExtResource("4_djcqd")
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
@@ -242,6 +241,7 @@ texture = ExtResource("4_djcqd")
 8:3/0 = 0
 8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:3/0 = 0
 10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:3/0 = 0
@@ -287,10 +287,10 @@ sources/3 = SubResource("TileSetAtlasSource_uqt1o")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djcqd"]
 size = Vector2(32, 64)
 
-[node name="Mundo" type="Node2D"]
+[node name="Mundo" type="Node2D" groups=["reacts_to_inversion"]]
+script = ExtResource("1_uqt1o")
 
 [node name="Map" type="TileMapLayer" parent="."]
-show_behind_parent = true
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAP//AAACAAEAAAABAP//AAADAAEAAAACAP//AAALAAMAAAADAP//AAAKAAMAAAAEAP//AAAIAAMAAAAFAP//AAAJAAMAAAAGAP//AAAKAAMAAAAAAPr/AAABAAQAAAABAPr/AAACAAQAAAACAPr/AAAEAAQAAAADAPr/AAACAAQAAAAEAPr/AAADAAQAAAAFAPr/AAACAAQAAAAGAPr/AAANAAMAAAAHAP//AAAMAAMAAAAIAP//AAALAAMAAAAJAP//AAADAAEAAAACAAAAAAAKAAQAAAABAAAAAAAKAAQAAAADAAAAAAAKAAQAAAAEAAAAAAAKAAQAAAAAAAAAAAAKAAQAAAAGAAAAAAAKAAQAAAAIAAAAAAAKAAQAAAAHAAAAAAAKAAQAAAAFAAAAAAAKAAQAAAAJAAAAAAAKAAQAAAAKAP//AAAKAAMAAAALAP//AAAJAAMAAAANAP//AAACAAIAAAAMAP//AAADAAEAAAANAP7/AAABAAMAAAANAP3/AAABAAIAAAANAPz/AAABAAQAAAANAPr/AAABAAMAAAANAPv/AAABAAMAAAA=")
 tile_set = SubResource("TileSet_0vka0")
@@ -309,12 +309,10 @@ script = ExtResource("5_prk2b")
 
 [node name="platform1" parent="." instance=ExtResource("6_djcqd")]
 position = Vector2(112, -80)
-appears_when_inverted = true
 frame = 2
 
 [node name="platform2" parent="." instance=ExtResource("6_djcqd")]
 position = Vector2(144, -80)
-appears_when_inverted = true
 frame = 3
 
 [node name="box" parent="." instance=ExtResource("7_b82al")]
@@ -326,13 +324,22 @@ position = Vector2(195, -34)
 [node name="key" parent="." instance=ExtResource("11_djcqd")]
 position = Vector2(42, -116)
 keyChar = "L"
-text = "Hehizo de ingravidadLorem Ipsum Dolor Sit Amet"
+text = "Hehizo de ingravidad\\nLorem Ipsum Dolor Sit Amet"
 
 [node name="Meta" type="Area2D" parent="."]
 script = ExtResource("12_4jhy8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Meta"]
-position = Vector2(306, -64)
+position = Vector2(320, -65)
 shape = SubResource("RectangleShape2D_djcqd")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_top = -230.0
+offset_right = 578.0
+color = Color(0.815686, 0.815686, 0.815686, 1)
 
 [connection signal="body_entered" from="Meta" to="Meta" method="_on_body_entered"]

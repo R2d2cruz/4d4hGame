@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cxdeogomnvp4m" path="res://Scripts/boton.gd" id="1_wd1rm"]
 
 [node name="RigidBody2D" type="StaticBody2D"]
-show_behind_parent = true
 script = ExtResource("1_wd1rm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

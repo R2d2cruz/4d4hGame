@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqhcp5hs40cqs"]
+[gd_scene load_steps=10 format=3 uid="uid://dqhcp5hs40cqs"]
 
 [ext_resource type="Script" uid="uid://4ycclfyf2j3p" path="res://Scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b0jfvrvpqe8al" path="res://Assets/player-sprite.png" id="2_08t41"]
+[ext_resource type="Texture2D" uid="uid://4umy6sejkgu2" path="res://Assets/32x32/32x32 textures (52).png" id="3_1ie0h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
 radius = 8.0
@@ -97,3 +98,8 @@ hframes = 8
 libraries = {
 &"": SubResource("AnimationLibrary_qhqgy")
 }
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4, 4)
+energy = 0.6
+texture = ExtResource("3_1ie0h")
