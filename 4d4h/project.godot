@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="4d4h"
-run/main_scene="uid://ccavxypeubenl"
+run/main_scene="uid://mr2u7b1n6lfl"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
