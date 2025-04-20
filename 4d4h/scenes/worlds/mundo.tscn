@@ -315,3 +315,12 @@ position = Vector2(126, -54)
 [node name="RigidBody2D" parent="." instance=ExtResource("8_wwc5f")]
 position = Vector2(195, -34)
 when_appers = 2
+
+[node name="Meta" type="Area2D" parent="."]
+script = ExtResource("12_4jhy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta"]
+position = Vector2(306, -64)
+shape = SubResource("RectangleShape2D_djcqd")
+
+[connection signal="body_entered" from="Meta" to="Meta" method="_on_body_entered"]
