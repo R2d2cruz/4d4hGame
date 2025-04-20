@@ -11,11 +11,13 @@ var active := true
 var frames:= {
 	0: 2,
 	1: 3,
-	6: 10,
-	7: 11,
-	8: 12,
-	9: 13,
-	14: 15,
+	4: 6,
+	5: 7,
+	8: 10,
+	9: 11,
+	12: 14,
+	13: 15,
+	16: 17
 }
 
 # Called when the node enters the scene tree for the first time.
