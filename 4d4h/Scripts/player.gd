@@ -24,10 +24,13 @@ func _ready():
 	add_to_group("reacts_to_inversion")
 	add_to_group("worldsFinishing")
 	light.enabled = false
+	light.energy = 0
+	var tween = create_tween()
+	tween.tween_property(light, "energy", 0.6, 1.0)
 
 func on_end():
 	var tween = create_tween()
-	tween.tween_property($PointLight2D, "energy", 0.0, 1.5)
+	tween.tween_property(light, "energy", 0.0, 1.5)
 
 
 func on_invert(state: bool):
