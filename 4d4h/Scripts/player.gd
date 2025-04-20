@@ -11,12 +11,20 @@ const timeEyes := 4;
 @onready var animationPlayer := $AnimationPlayer
 @onready var detectarCaja : RayCast2D = $DetectarCaja
 @onready var light : PointLight2D = $PointLight2D
+@onready var audio : = $AudioStreamPlayer2D
 
 var timerEyes : float = 0;
 var playing_idle2 := false
 var gravity_enabled := true
 var last_pushable : Node = null
 var levelUnfinished := true
+var was_on_floor := true
+
+var audios := {
+	"jump": load("res://Assets/Sounds/subida2.wav"),
+	"fall": load("res://Assets/Sounds/caida.wav"),
+	"walk": load("res://Assets/Sounds/walk.wav"),
+}
 
 
 func _ready():
@@ -78,11 +86,17 @@ func _physics_process(_delta):
 				last_pushable = null
 
 		if is_on_floor():
+			was_on_floor = true
 			if Input.is_action_pressed("ui_accept"):
 				velocity.y = jumpHeight
+				playSound("jump")
+				was_on_floor = false
 			if friction:
 				velocity.x = lerp(velocity.x, 0.0, 0.5)
 		else:
+			if was_on_floor and (velocity.y > 0):
+				playSound("fall")
+				was_on_floor = false
 			if friction:
 				velocity.x = lerp(velocity.x, 0.0, 0.01)
 				
@@ -100,7 +114,9 @@ func _physics_process(_delta):
 		if friction:
 			velocity.x = lerp(velocity.x, 0.0, 0.5)
 
-	if levelUnfinished:
-		move_and_slide()
-	else:
-		animationPlayer.play("Idle")
+	move_and_slide()
+
+func playSound(soundName):
+	audio.stream = audios[soundName]
+	audio.play()
+	
