@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ccavxypeubenl"]
+[gd_scene load_steps=19 format=4 uid="uid://ccavxypeubenl"]
 
 [ext_resource type="Texture2D" uid="uid://da4chfw72dwj4" path="res://Assets/Rocky Roads/Tilesets/tileset_desert.png" id="1_drc3c"]
 [ext_resource type="Texture2D" uid="uid://h8tv2dvmhgrg" path="res://Assets/tileset_base_cave.png" id="1_prk2b"]
@@ -291,30 +291,32 @@ tile_map_data = PackedByteArray("AAAAAP//AQACAAEAAAABAP//AQADAAEAAAACAP//AQADAAE
 tile_set = SubResource("TileSet_0vka0")
 script = ExtResource("3_wwc5f")
 
-[node name="CharacterBody2D" parent="." groups=["player", "reacts_gravity"] instance=ExtResource("4_voc7j")]
+[node name="Player" parent="." groups=["player", "reacts_gravity"] instance=ExtResource("4_voc7j")]
 top_level = true
 position = Vector2(16, -58)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 offset = Vector2(0, -48)
 zoom = Vector2(3, 3)
 
 [node name="WorldController" type="Node" parent="."]
 script = ExtResource("5_prk2b")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_djcqd")]
+[node name="platform1" parent="." instance=ExtResource("6_djcqd")]
 position = Vector2(112, -80)
+appears_when_inverted = true
+frame = 2
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("6_djcqd")]
+[node name="platform2" parent="." instance=ExtResource("6_djcqd")]
 position = Vector2(144, -80)
-frame = 1
+appears_when_inverted = true
+frame = 3
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("7_b82al")]
+[node name="box" parent="." instance=ExtResource("7_b82al")]
 position = Vector2(126, -54)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("8_wwc5f")]
+[node name="button" parent="." instance=ExtResource("8_wwc5f")]
 position = Vector2(195, -34)
-when_appers = 2
 
 [node name="Meta" type="Area2D" parent="."]
 script = ExtResource("12_4jhy8")
