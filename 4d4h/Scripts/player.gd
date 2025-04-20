@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const moveSpeed := 50
 const maxSpeed := 100
-const jumpHeight := -350
+const jumpHeight := -380
 const gravity := 15
 const speedGravityLost := -15
 const timeEyes := 4;
