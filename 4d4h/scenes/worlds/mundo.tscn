@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b13dyu7j55hp6" path="res://scenes/objects/platformInvertible.tscn" id="6_djcqd"]
 [ext_resource type="PackedScene" uid="uid://ccu6d1qom56uf" path="res://scenes/objects/boxBase.tscn" id="7_b82al"]
 [ext_resource type="PackedScene" uid="uid://ca42stepa6dw4" path="res://scenes/objects/boton.tscn" id="8_wwc5f"]
+[ext_resource type="PackedScene" uid="uid://che33a4rkrxmq" path="res://scenes/objects/key.tscn" id="11_djcqd"]
+[ext_resource type="Script" uid="uid://bkdk5klfwh5ya" path="res://Scripts/meta.gd" id="12_4jhy8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jhy8"]
 texture = ExtResource("1_prk2b")
@@ -33,7 +35,6 @@ texture = ExtResource("1_prk2b")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:2/0 = 0
@@ -283,11 +284,15 @@ sources/2 = SubResource("TileSetAtlasSource_yi5ae")
 sources/0 = SubResource("TileSetAtlasSource_4jhy8")
 sources/3 = SubResource("TileSetAtlasSource_uqt1o")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djcqd"]
+size = Vector2(32, 64)
+
 [node name="Mundo" type="Node2D"]
 
-[node name="TileMap" type="TileMapLayer" parent="."]
+[node name="Map" type="TileMapLayer" parent="."]
+show_behind_parent = true
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAP//AQACAAEAAAABAP//AQADAAEAAAACAP//AQADAAEAAAADAP//AQADAAEAAAAEAP//AQADAAEAAAAFAP//AQADAAEAAAAGAP//AQAEAAEAAAAAAPr/AQADAAEAAAABAPr/AQADAAEAAAACAPr/AQADAAEAAAADAPr/AQADAAEAAAAEAPr/AQADAAEAAAAFAPr/AQADAAEAAAAGAPr/AQADAAEAAAAHAP//AQAEAAEAAAAIAP//AQAEAAEAAAAJAP//AQADAAEAAAACAAAAAQAEAAMAAAABAAAAAQAEAAIAAAADAAAAAQAEAAIAAAAEAAAAAQADAAIAAAAAAAAAAQADAAIAAAAGAAAAAQADAAIAAAAIAAAAAQAEAAIAAAAHAAAAAQAEAAIAAAAFAAAAAQAEAAIAAAAHAPz/AQADAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AAACAAEAAAABAP//AAADAAEAAAACAP//AAALAAMAAAADAP//AAAKAAMAAAAEAP//AAAIAAMAAAAFAP//AAAJAAMAAAAGAP//AAAKAAMAAAAAAPr/AAABAAQAAAABAPr/AAACAAQAAAACAPr/AAAEAAQAAAADAPr/AAACAAQAAAAEAPr/AAADAAQAAAAFAPr/AAACAAQAAAAGAPr/AAANAAMAAAAHAP//AAAMAAMAAAAIAP//AAALAAMAAAAJAP//AAADAAEAAAACAAAAAAAKAAQAAAABAAAAAAAKAAQAAAADAAAAAAAKAAQAAAAEAAAAAAAKAAQAAAAAAAAAAAAKAAQAAAAGAAAAAAAKAAQAAAAIAAAAAAAKAAQAAAAHAAAAAAAKAAQAAAAFAAAAAAAKAAQAAAAJAAAAAAAKAAQAAAAKAP//AAAKAAMAAAALAP//AAAJAAMAAAANAP//AAACAAIAAAAMAP//AAADAAEAAAANAP7/AAABAAMAAAANAP3/AAABAAIAAAANAPz/AAABAAQAAAANAPr/AAABAAMAAAANAPv/AAABAAMAAAA=")
 tile_set = SubResource("TileSet_0vka0")
 script = ExtResource("3_wwc5f")
 
@@ -317,6 +322,11 @@ position = Vector2(126, -54)
 
 [node name="button" parent="." instance=ExtResource("8_wwc5f")]
 position = Vector2(195, -34)
+
+[node name="key" parent="." instance=ExtResource("11_djcqd")]
+position = Vector2(42, -116)
+keyChar = "L"
+text = "Hehizo de ingravidadLorem Ipsum Dolor Sit Amet"
 
 [node name="Meta" type="Area2D" parent="."]
 script = ExtResource("12_4jhy8")
