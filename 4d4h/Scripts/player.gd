@@ -22,7 +22,13 @@ var levelUnfinished := true
 func _ready():
 	#add_to_group("reacts_gravity")
 	add_to_group("reacts_to_inversion")
+	add_to_group("worldsFinishing")
 	light.enabled = false
+
+func on_end():
+	var tween = create_tween()
+	tween.tween_property($PointLight2D, "energy", 0.0, 1.5)
+
 
 func on_invert(state: bool):
 	light.enabled = state

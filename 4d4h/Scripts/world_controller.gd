@@ -9,9 +9,21 @@ var gravityTimer : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("worldsFinishing")
 	if startInvert:
 		inverted = !inverted
 		get_tree().call_group("reacts_to_inversion", "on_invert", inverted)
+		
+func on_end():
+	if not inverted:
+		inverted = !inverted
+		get_tree().call_group("reacts_to_inversion", "on_invert", inverted)
+	await get_tree().create_timer(2.0).timeout
+	var actualScene : String = get_tree().current_scene.name
+	if actualScene == "Mundo":
+		get_tree().change_scene_to_file("res://scenes/worlds/level1.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/worlds/level" + str(int(actualScene) + 1) + ".tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

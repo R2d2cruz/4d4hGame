@@ -2,9 +2,7 @@ extends TileMapLayer
 
 # Mapeo entre tiles: cada clave es un par (source_id, atlas_coords), cada valor su contraparte
 @export var tile_swap_map := {
-	Vector3i(1, 2, 1): Vector3i(2, 2, 1),  # source 1 (2,1) => source 2 (2,1)
-	Vector3i(1, 3, 1): Vector3i(2, 3, 1),  # source 1 (3,1) => source 2 (3,1)
-	Vector3i(1, 5, 1): Vector3i(2, 4, 1),  # source 1 (5,1) => source 2 (4,1)
+	Vector3i(0, 1, 0): Vector3i(3, 1, 0),
 	Vector3i(0, 2, 0): Vector3i(3, 2, 0),
 	Vector3i(0, 4, 0): Vector3i(3, 4, 0),
 	Vector3i(0, 2, 1): Vector3i(3, 2, 1),
@@ -17,6 +15,7 @@ extends TileMapLayer
 	Vector3i(0, 11, 1): Vector3i(3, 11, 1),
 	Vector3i(0, 12, 1): Vector3i(3, 12, 1),
 	Vector3i(0, 13, 1): Vector3i(3, 13, 1),
+	Vector3i(0, 1, 2): Vector3i(3, 1, 2),
 	Vector3i(0, 2, 2): Vector3i(3, 2, 2),
 	Vector3i(0, 3, 2): Vector3i(3, 3, 2),
 	Vector3i(0, 4, 2): Vector3i(3, 4, 2),
@@ -32,6 +31,7 @@ extends TileMapLayer
 	Vector3i(0, 11, 3): Vector3i(3, 11, 3),
 	Vector3i(0, 12, 3): Vector3i(3, 12, 3),
 	Vector3i(0, 13, 3): Vector3i(3, 13, 3),
+	Vector3i(0, 1, 4): Vector3i(3, 1, 4),
 	Vector3i(0, 2, 4): Vector3i(3, 2, 4),
 	Vector3i(0, 3, 4): Vector3i(3, 3, 4),
 	Vector3i(0, 4, 4): Vector3i(3, 4, 4),

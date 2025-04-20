@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.get_name() == "Player":
-		print("enter")
+		get_tree().call_group("worldsFinishing", "on_end")
