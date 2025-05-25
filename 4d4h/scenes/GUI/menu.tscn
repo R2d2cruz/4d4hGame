@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7pe77f5jxg8"]
+
+[ext_resource type="FontFile" uid="uid://bom0hyy1f7pfn" path="res://Assets/fonts/DungeonFont.ttf" id="1_lpdhj"]
+[ext_resource type="Script" uid="uid://bxbbfi0edmsxt" path="res://Scripts/menu.gd" id="1_mrh60"]
+[ext_resource type="Texture2D" uid="uid://blmooxunarj1f" path="res://Assets/Pixilart selection.png" id="3_u1ri8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrh60")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PixilartSelection" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 328)
+rotation = 1.5708
+scale = Vector2(8, 8)
+texture = ExtResource("3_u1ri8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_lpdhj")
+theme_override_font_sizes/font_size = 47
+text = "Tutorial"
+
+[connection signal="pressed" from="VBoxContainer/startButton" to="." method="_on_start_button_pressed"]

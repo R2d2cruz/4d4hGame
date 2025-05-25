@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://sy5cwwpd301m"]
+
+[ext_resource type="Texture2D" uid="uid://devx532ee0qec" path="res://Assets/UN-Games_pixelated.png" id="1_ko026"]
+[ext_resource type="Texture2D" uid="uid://4umy6sejkgu2" path="res://Assets/32x32/32x32 textures (52).png" id="2_rdgap"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ko026")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_rdgap")

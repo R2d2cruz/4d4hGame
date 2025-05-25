@@ -37,7 +37,7 @@ func on_invert(state: bool):
 	sprite2D.visible = active
 	collisionShape2D.disabled = not active
 	sprite2D.frame = frames[frame] if state else frame
-	pointLight2D.enabled = state and (not when_appers != 1)
+	pointLight2D.enabled = state and active
 
 func get_key_by_value(value: int) -> int:
 	for k in frames.keys():

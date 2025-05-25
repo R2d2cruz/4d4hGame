@@ -56,14 +56,20 @@ func _physics_process(_delta):
 		if Input.is_action_pressed("right"):
 			sprite.flip_h = false
 			detectarCaja.scale.x = 1
-			animationPlayer.play("Walk")
 			velocity.x = min(velocity.x + moveSpeed, maxSpeed)
+			if detectarCaja.is_colliding():
+				animationPlayer.play("pushWalk")
+			else:
+				animationPlayer.play("newWalk")
 
 		elif Input.is_action_pressed("left"):
 			sprite.flip_h = true
 			detectarCaja.scale.x = -1
-			animationPlayer.play("Walk")
 			velocity.x = max(velocity.x - moveSpeed, -maxSpeed)
+			if detectarCaja.is_colliding():
+				animationPlayer.play("pushWalk")
+			else:
+				animationPlayer.play("newWalk")
 
 		else:
 			timerEyes += _delta

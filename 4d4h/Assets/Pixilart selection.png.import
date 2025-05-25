@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://up6skqcdaudy"
-path="res://.godot/imported/32x32 textures (1).png-06cfc6d3c2a77a74e07b50430b756b51.ctex"
+uid="uid://blmooxunarj1f"
+path="res://.godot/imported/Pixilart selection.png-1d37321ba0ca30ed1bfc882b903f38d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SimpleKeysSprites/32x32 textures (1).png"
-dest_files=["res://.godot/imported/32x32 textures (1).png-06cfc6d3c2a77a74e07b50430b756b51.ctex"]
+source_file="res://Assets/Pixilart selection.png"
+dest_files=["res://.godot/imported/Pixilart selection.png-1d37321ba0ca30ed1bfc882b903f38d1.ctex"]
 
 [params]
 

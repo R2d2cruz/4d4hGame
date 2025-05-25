@@ -23,10 +23,11 @@ func on_end():
 	await get_tree().create_timer(2.0).timeout
 	var actualScene : String = get_tree().current_scene.name
 	print(str(int(actualScene) + 1))
-	if actualScene == "Mundo":
-		get_tree().change_scene_to_file("res://scenes/worlds/level1.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/worlds/level" + str(int(actualScene) + 1) + ".tscn")
+	get_tree().change_scene_to_file("res://scenes/GUI/menu.tscn")
+	#if actualScene == "Mundo":
+		#get_tree().change_scene_to_file("res://scenes/worlds/level1.tscn")
+	#else:
+		#get_tree().change_scene_to_file("res://scenes/worlds/level" + str(int(actualScene) + 1) + ".tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

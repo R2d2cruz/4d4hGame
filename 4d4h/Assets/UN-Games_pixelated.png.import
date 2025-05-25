@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckmu2otsnfbhf"
-path="res://.godot/imported/32x32 textures (20).png-688752bc56d107aef76424e86fec4038.ctex"
+uid="uid://devx532ee0qec"
+path="res://.godot/imported/UN-Games_pixelated.png-ad92883f14092b3e6d7e7e0961f40b56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SimpleKeysSprites/32x32 textures (20).png"
-dest_files=["res://.godot/imported/32x32 textures (20).png-688752bc56d107aef76424e86fec4038.ctex"]
+source_file="res://Assets/UN-Games_pixelated.png"
+dest_files=["res://.godot/imported/UN-Games_pixelated.png-ad92883f14092b3e6d7e7e0961f40b56.ctex"]
 
 [params]
 
